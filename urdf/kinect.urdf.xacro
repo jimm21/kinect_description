@@ -1,5 +1,7 @@
-<?xml version="1.0"?>
-<robot xmlns:xi="http://www.w3.org/2001/XInclude"
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="kinect_camera"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
     xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
     xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
@@ -15,14 +17,6 @@
     
   <!-- math constants -->
   <xacro:property name="M_PI" value="3.1415926535897931" />
-  <xacro:macro name="kinect" params="xyz rpy parent_frame" >
-  
-  <joint name="base_camera_joint" type="fixed">
-    <origin xyz="${xyz}" rpy="${rpy}" />
-    <parent link="${parent_frame}" />
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <child link="camera_link" />
-  </joint>
 
   <link name="camera_link">
     <inertial>
@@ -113,6 +107,5 @@
     </inertial>
   </link>
 
-</xacro:macro>
 
 </robot>
